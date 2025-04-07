@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My TodoList</title>
     <style>
-        *{
+        * {
             font-family: Microsoft JhengHei;
         }
+
         .bg {
             width: 50%;
             height: 100vh;
@@ -23,6 +24,7 @@
         h2 {
             margin-left: 25px;
         }
+
         .completed {
             text-decoration: line-through;
         }
@@ -33,9 +35,9 @@
     <div id="main" class="bg">
 
         <input type="text" placeholder="請輸入代辦事項" @keyup.enter="addTodo(newTodo)" v-model="newTodo">
-        <h2>我的待辦事項:</h2>
+        <h2>我的待辦事項123:</h2>
         <ul>
-            <li v-for="todo in todos" >
+            <li v-for="todo in todos">
                 <input type="checkbox" :id="todo.id" v-model="todo.completed">
                 <label class="form-check-label" :for="todo.id" :class="{'completed':todo.completed}">
                     {{todo.content}}
@@ -43,7 +45,7 @@
                 - <a href="#" @click.prevent="removeTodo(todo)">刪除</a>
             </li>
         </ul>
-        
+
     </div>
 
 
@@ -54,20 +56,20 @@
             data: {
                 todos: [],
                 newTodo: '',
-                toggle:'1',
+                toggle: '1',
             },
             methods: {
                 addTodo: function (todo) {
                     this.todos.push({
                         content: todo,
-                        
+
                     })
                 },
                 removeTodo: function (todo) {
                     this.todos.splice(this.todos.indexOf(todo), 1);
                 },
             },
-            
+
 
         })
 
